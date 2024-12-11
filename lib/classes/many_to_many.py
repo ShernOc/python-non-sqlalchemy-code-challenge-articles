@@ -156,3 +156,45 @@ class Magazine:
         else:
             return None
     
+
+# instances 
+author_1 = Author("Carry Bradshaw")
+author_2 = Author("Nathaniel Hawthorne")
+
+magazine1 = Magazine("Vogue", "Fashion")
+magazine2 = Magazine("How to Kill a Mocking Bird", "Lifestyle")
+
+article_1 = Article(author_1, magazine1, "How to wear a tutu with style")
+article_2 = Article(author_2, magazine2, "Dating life in NYC")
+
+#calling the functions 
+#Show case the article 
+print([article.title for article in author_1.articles()])
+print([article.title for article in author_2.articles()])
+
+#adding the articles
+new_article = author_1.add_article(magazine1, "Top 10 fashion tips")
+print(new_article.title)
+
+
+
+#getting the magazine
+print([mag.name for mag in author_1.magazines()])
+
+#showing the topic areas 
+print(author_2.topic_areas())
+
+#magazine title
+print([article.title for article in magazine1.articles()])
+
+#showing the contributors based on the author. 
+print([author.name for author in magazine1.contributors()])
+
+#showcase the magazine titles
+print(magazine1.article_titles())
+
+#contributing authors 
+print([author.name for author in magazine1.contributing_authors()])
+
+#showcasing all the articles
+print([article.title for article in Article.all])
